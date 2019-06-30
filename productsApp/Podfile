@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'productsApp' do
+  use_frameworks!
+
+  # Pods for productsApp
+	pod 'Alamofire', '5.0.0-beta.3'
+	pod 'RxSwift', '~> 5.0'
+  	pod 'RxCocoa', '~> 5.0'
+  	pod 'RxDataSources', '~> 4.0'
+
+  target 'productsAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'productsAppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
