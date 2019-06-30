@@ -7,7 +7,26 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class HomeViewModel {
+    private lazy var productsManager: ProductManager = {
+       let manager = ProductManager()
+        return manager
+    }()
+    private let disposeBag = DisposeBag()
     
+    var products = BehaviorRelay<[Product]>(value: [])
+    var productsObservable: Observable<[Product]> {
+        return products.asObservable()
+    }
+    
+    func loadProducts() {
+        productsManager.fetchProducts().subscribe(onSuccess: { [weak self] (products) in
+            self?.products.accept(products)
+            }, onError: { error in
+                print("error: ", error.localizedDescription)
+        }).disposed(by: disposeBag)
+    }
 }

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeController" customModule="productsApp" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="REQ-V9-cKF" id="xAi-Al-A0f"/>
                 <outlet property="view" destination="iN0-l3-epB" id="2Xc-Fr-TFp"/>
             </connections>
         </placeholder>
@@ -19,7 +20,19 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="REQ-V9-cKF">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" red="0.062745098039215685" green="0.098039215686274508" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="REQ-V9-cKF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Kis-Ce-qCG"/>
+                <constraint firstItem="REQ-V9-cKF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UyN-P3-eUG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="REQ-V9-cKF" secondAttribute="trailing" id="XEq-Ib-Obh"/>
+                <constraint firstAttribute="bottom" secondItem="REQ-V9-cKF" secondAttribute="bottom" id="kns-h0-XNP"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>

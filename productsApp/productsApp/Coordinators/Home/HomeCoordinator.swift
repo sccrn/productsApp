@@ -16,6 +16,9 @@ class HomeCoordinator: Coordinator {
     
     private lazy var navigationController: UINavigationController = {
         let navigationController = UINavigationController()
+        navigationController.navigationBar.barTintColor = .navBar
+        navigationController.navigationBar.tintColor = .navTintColor
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.navTintColor]
         return navigationController
     }()
     
