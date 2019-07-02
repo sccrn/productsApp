@@ -15,18 +15,56 @@ class HomeViewModel {
        let manager = ProductManager()
         return manager
     }()
+    private lazy var realmManager: RealmManager = {
+        let manager = RealmManager()
+        return manager
+    }()
     private let disposeBag = DisposeBag()
     
-    var products = BehaviorRelay<[Product]>(value: [])
-    var productsObservable: Observable<[Product]> {
+    var cart = BehaviorRelay<CartRealm>(value: CartRealm())
+    var products = BehaviorRelay<[ProductRealm]>(value: [])
+    var productsObservable: Observable<[ProductRealm]> {
         return products.asObservable()
     }
     
     func loadProducts() {
         productsManager.fetchProducts().subscribe(onSuccess: { [weak self] (products) in
-            self?.products.accept(products)
+                self?.setupProducts(products: products)
             }, onError: { error in
                 print("error: ", error.localizedDescription)
         }).disposed(by: disposeBag)
+    }
+    
+    private func setupProducts(products: Products) {
+        realmManager.deleteProducts()
+        var array: [ProductRealm] = []
+        products.products.forEach { product in
+            let model = ProductRealm()
+            model.code = product.code
+            model.name = product.name
+            model.price = product.price
+            model.quantity = 0
+            array.append(model)
+        }
+        realmManager.saveObjects(objts: array)
+        self.products.accept(array)
+    }
+}
+
+extension HomeViewModel {
+    func updateTableView(by products: [ProductRealm]) -> [ProductSection] {
+        return [cartSection(), productSection(by: products)]
+    }
+    
+    func cartSection() -> ProductSection {
+        return ProductSection.cartSection(content: [.cart(cart: self.cart.value)])
+    }
+    
+    func productSection(by products: [ProductRealm]) -> ProductSection {
+        var array: [ProductItem] = []
+        products.forEach { product in
+            array.append(.product(products: product))
+        }
+        return ProductSection.productSection(content: array)
     }
 }

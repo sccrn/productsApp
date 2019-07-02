@@ -9,9 +9,9 @@
 import UIKit
 
 extension UIColor {
-    ///#564787
-    static let navBar = UIColor(red: 86/255, green: 71/255, blue: 135/255, alpha: 1)
+    ///#000000
+    static let navBar = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
     
-    ///#F2FDFF
-    static let navTintColor = UIColor(red: 242/255, green: 253/255, blue: 255/255, alpha: 1)
+    ///#FBFBFB
+    static let navTintColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
 }

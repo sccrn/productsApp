@@ -8,6 +8,7 @@ target 'productsApp' do
 	pod 'Alamofire', '5.0.0-beta.3'
 	pod 'RxSwift', '~> 5.0'
   	pod 'RxCocoa', '~> 5.0'
+	pod 'RealmSwift'
   	pod 'RxDataSources', '~> 4.0'
 
   target 'productsAppTests' do

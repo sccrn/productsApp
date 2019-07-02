@@ -23,6 +23,9 @@ struct Constants {
     }
     
     struct Label {
+        static let productsQuantity = "Products quantity: "
+        static let totalPrice = "Total: "
+        static let price = "€"
         static let sectionTitle = "Hello! Choose your products! :)"
     }
 }

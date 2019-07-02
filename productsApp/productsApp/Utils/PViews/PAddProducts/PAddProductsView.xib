@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PAddProductsView" customModule="productsApp" customModuleProvider="target">
+            <connections>
+                <outlet property="minusButton" destination="ttZ-3K-IRn" id="Tht-dp-Wmq"/>
+                <outlet property="plusButton" destination="XTs-rh-98J" id="rPb-Yn-NQq"/>
+                <outlet property="productsQuantity" destination="V3m-nX-RRa" id="2Zg-Zy-i2b"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="bMM-ol-5i1">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3m-nX-RRa">
+                    <rect key="frame" x="46" y="11" width="8" height="18"/>
+                    <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTs-rh-98J">
+                    <rect key="frame" x="7" y="7.5" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="0Wz-ZF-mre"/>
+                        <constraint firstAttribute="height" constant="25" id="h1e-H4-gJ7"/>
+                    </constraints>
+                    <state key="normal" image="plus"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttZ-3K-IRn">
+                    <rect key="frame" x="68" y="7.5" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="1QJ-Ko-gTK"/>
+                        <constraint firstAttribute="width" constant="25" id="56R-x8-X6a"/>
+                    </constraints>
+                    <state key="normal" image="minus"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.098494045436382294" green="0.069105468690395355" blue="0.12703481316566467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XTs-rh-98J" firstAttribute="bottom" secondItem="ttZ-3K-IRn" secondAttribute="bottom" id="2NL-nK-zmL"/>
+                <constraint firstItem="XTs-rh-98J" firstAttribute="leading" secondItem="VMl-2w-yL3" secondAttribute="leading" constant="7" id="9BM-wb-Odz"/>
+                <constraint firstItem="V3m-nX-RRa" firstAttribute="centerY" secondItem="bMM-ol-5i1" secondAttribute="centerY" id="Phw-XW-mzf"/>
+                <constraint firstItem="XTs-rh-98J" firstAttribute="centerY" secondItem="bMM-ol-5i1" secondAttribute="centerY" id="RFm-VP-F2X"/>
+                <constraint firstItem="VMl-2w-yL3" firstAttribute="trailing" secondItem="ttZ-3K-IRn" secondAttribute="trailing" constant="7" id="aat-K1-dny"/>
+                <constraint firstItem="XTs-rh-98J" firstAttribute="top" secondItem="ttZ-3K-IRn" secondAttribute="top" id="s2U-SF-QMD"/>
+                <constraint firstItem="V3m-nX-RRa" firstAttribute="centerX" secondItem="bMM-ol-5i1" secondAttribute="centerX" id="usV-Lk-62K"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="VMl-2w-yL3"/>
+            <point key="canvasLocation" x="52" y="58"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="minus" width="82" height="82"/>
+        <image name="plus" width="82" height="82"/>
+    </resources>
+</document>

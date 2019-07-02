@@ -18,14 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="b5A-Q5-Pe1">
-                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="b5A-Q5-Pe1">
+                                <rect key="frame" x="120.5" y="361.5" width="173" height="173"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b5A-Q5-Pe1" secondAttribute="height" multiplier="1:1" id="Uwe-XF-rtK"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.06084752082824707" green="0.095127023756504059" blue="0.20721533894538879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.015686274509803921" green="0.015686274509803921" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="b5A-Q5-Pe1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Epe-zT-ZMe"/>
                             <constraint firstItem="b5A-Q5-Pe1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Z3s-iZ-gCG"/>
@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="100" height="100"/>
+        <image name="appLogo" width="173" height="173"/>
     </resources>
 </document>

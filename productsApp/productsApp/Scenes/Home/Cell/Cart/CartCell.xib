@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CartCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="85" id="pn3-wW-Sgv" customClass="CartCell" customModule="productsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pn3-wW-Sgv" id="eze-Ib-trw">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="84.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9T-Ym-vrf">
+                        <rect key="frame" x="13" y="8" width="388" height="69"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="MfE-9a-jb6">
+                                <rect key="frame" x="14" y="12" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="DJG-Yy-1xO"/>
+                                    <constraint firstAttribute="height" constant="45" id="bXu-4U-oA6"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nfu-ta-kdp">
+                                <rect key="frame" x="338" y="12" width="36" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tww-YY-U0r">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="20"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbj-hs-Rs0">
+                                        <rect key="frame" x="0.0" y="25" width="36" height="20"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21568627450980393" green="0.14509803921568626" blue="0.28627450980392155" alpha="0.34999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Nfu-ta-kdp" secondAttribute="trailing" constant="14" id="BHi-Cw-GyT"/>
+                            <constraint firstItem="Nfu-ta-kdp" firstAttribute="top" secondItem="n9T-Ym-vrf" secondAttribute="top" constant="12" id="QQg-QP-sS5"/>
+                            <constraint firstItem="MfE-9a-jb6" firstAttribute="leading" secondItem="n9T-Ym-vrf" secondAttribute="leading" constant="14" id="Rxd-Dv-HEc"/>
+                            <constraint firstAttribute="bottom" secondItem="MfE-9a-jb6" secondAttribute="bottom" constant="12" id="fkm-cp-S0l"/>
+                            <constraint firstItem="MfE-9a-jb6" firstAttribute="top" secondItem="n9T-Ym-vrf" secondAttribute="top" constant="12" id="l1R-yH-hbO"/>
+                            <constraint firstAttribute="bottom" secondItem="Nfu-ta-kdp" secondAttribute="bottom" constant="12" id="zLS-qX-2Lz"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="n9T-Ym-vrf" firstAttribute="leading" secondItem="eze-Ib-trw" secondAttribute="leading" constant="13" id="1f8-b0-5ZQ"/>
+                    <constraint firstAttribute="trailing" secondItem="n9T-Ym-vrf" secondAttribute="trailing" constant="13" id="Qtf-uy-mh1"/>
+                    <constraint firstAttribute="bottom" secondItem="n9T-Ym-vrf" secondAttribute="bottom" constant="7.5" id="ibc-0T-ukW"/>
+                    <constraint firstItem="n9T-Ym-vrf" firstAttribute="top" secondItem="eze-Ib-trw" secondAttribute="top" constant="8" id="ugx-ga-GUZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="productsQuantity" destination="tww-YY-U0r" id="703-41-dyb"/>
+                <outlet property="totalPrice" destination="Gbj-hs-Rs0" id="oV1-8z-cTw"/>
+            </connections>
+            <point key="canvasLocation" x="118.84057971014494" y="77.34375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cart" width="84" height="82"/>
+    </resources>
+</document>
