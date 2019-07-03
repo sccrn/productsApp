@@ -9,12 +9,23 @@
 import Foundation
 import UIKit
 
+protocol CartCellDelegate: class {
+    func didSelectCheckout(for cart: CartRealm)
+}
+
 class CartCell: UITableViewCell {
+    weak var delegate: CartCellDelegate?
     @IBOutlet weak var productsQuantity: UILabel!
-    @IBOutlet weak var totalPrice: UILabel!
+
+    private var cart: CartRealm?
     
     func configure(cart: CartRealm) {
+        self.cart = cart
         productsQuantity.text = "\(Constants.Label.productsQuantity)\(cart.productsQuantity)"
-        totalPrice.text = "\(Constants.Label.totalPrice)\(cart.price)\(Constants.Label.price)"
+    }
+    
+    @IBAction func actionCheckout(_ sender: Any) {
+        guard let model = cart else { return }
+        delegate?.didSelectCheckout(for: model)
     }
 }

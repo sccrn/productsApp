@@ -26,9 +26,26 @@ class RealmManager {
         })
     }
     
-    func editCart(quantity: Int, objt: CartRealm) {
+    func editCart(objt: CartRealm, product: ProductRealm, isAddProduct: Bool) {
         try? realm!.write ({
+            if objt.products.count > 0 {
+                if let index = objt.products.index(of: product) {
+                    objt.products.remove(at: index)
+                }
+            }
+            if isAddProduct {
+                product.quantity += 1
+            } else if product.quantity > 0 && !isAddProduct {
+                product.quantity -= 1
+            }
+            if product.quantity > 0 { objt.products.append(product) }
+            var quantity: Int = 0
+            objt.productsQuantity = 0
+            objt.products.forEach { prod in
+                quantity += prod.quantity
+            }
             objt.productsQuantity = quantity
+            realm?.add(product, update: true)
             realm?.add(objt, update: true)
         })
     }

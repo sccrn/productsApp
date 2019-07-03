@@ -75,6 +75,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="addProductView" destination="XtY-Bi-jcb" id="fMk-zN-jDm"/>
                 <outlet property="productName" destination="aEH-F4-tEo" id="jQr-JX-R9v"/>
                 <outlet property="productPrice" destination="8Ab-0b-7MZ" id="TV6-oT-CuT"/>
             </connections>

@@ -22,10 +22,12 @@ class HomeController: BaseController {
             case .cart(let cart):
                 let cell = tableView.dequeue(cellClass: CartCell.self, indexPath: indexPath)
                 cell.configure(cart: cart)
+                cell.delegate = self
                 return cell
             case .product(let product):
                 let cell = tableView.dequeue(cellClass: ProductCell.self, indexPath: indexPath)
                 cell.configure(product: product)
+                cell.addProductView.delegate = self
                 return cell
             }
        })
@@ -56,5 +58,17 @@ class HomeController: BaseController {
         viewModel.productsObservable.flatMap { (products) -> Observable<[ProductSection]> in  return .just(self.viewModel.updateTableView(by: products))
         }.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
+    }
+}
+
+extension HomeController: CartCellDelegate {
+    func didSelectCheckout(for cart: CartRealm) {
+        viewModel.coordinator?.moveForwardFlow(self, didSelect: cart)
+    }
+}
+
+extension HomeController: PAddProductsDelegate {
+    func didChangeQuantity(for product: ProductRealm, isAddProduct: Bool) {
+        viewModel.saveProduct(product: product, isAddProduct: isAddProduct)
     }
 }

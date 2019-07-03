@@ -12,10 +12,10 @@ import Realm
 
 ///Our Realm's model for our cart's object.
 class CartRealm: Object {
-    @objc dynamic var products = RLMArray<Object>(objectClassName: ProductRealm.className())
     @objc dynamic var productsQuantity: Int = 0
     @objc dynamic var price: Double = 0.0
     @objc dynamic var id: Int = 0
+    let products = List<ProductRealm>()
     
     override static func primaryKey() -> String {
         return "id"

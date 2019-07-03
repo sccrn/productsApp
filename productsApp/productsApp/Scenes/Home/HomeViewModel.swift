@@ -10,7 +10,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+protocol HomeCoordinatorDelegate: class {
+    func moveForwardFlow(_ controller: HomeController, didSelect cart: CartRealm)
+}
+
 class HomeViewModel {
+    weak var coordinator: HomeCoordinatorDelegate?
     private lazy var productsManager: ProductManager = {
        let manager = ProductManager()
         return manager
@@ -66,5 +71,13 @@ extension HomeViewModel {
             array.append(.product(products: product))
         }
         return ProductSection.productSection(content: array)
+    }
+    
+    func saveProduct(product: ProductRealm, isAddProduct: Bool) {
+        realmManager.editCart(objt: cart.value, product: product, isAddProduct: isAddProduct)
+        guard let cart = realmManager.getCartObject() else { return }
+        let products = realmManager.getProducts()
+        self.cart.accept(cart)
+        self.products.accept(products)
     }
 }

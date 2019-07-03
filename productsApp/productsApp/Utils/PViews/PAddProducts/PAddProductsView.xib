@@ -12,8 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PAddProductsView" customModule="productsApp" customModuleProvider="target">
             <connections>
-                <outlet property="minusButton" destination="ttZ-3K-IRn" id="Tht-dp-Wmq"/>
-                <outlet property="plusButton" destination="XTs-rh-98J" id="rPb-Yn-NQq"/>
                 <outlet property="productsQuantity" destination="V3m-nX-RRa" id="2Zg-Zy-i2b"/>
             </connections>
         </placeholder>
@@ -35,6 +33,9 @@
                         <constraint firstAttribute="height" constant="25" id="h1e-H4-gJ7"/>
                     </constraints>
                     <state key="normal" image="plus"/>
+                    <connections>
+                        <action selector="actionPlusButton:" destination="-1" eventType="touchUpInside" id="zS8-kU-h8o"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttZ-3K-IRn">
                     <rect key="frame" x="68" y="7.5" width="25" height="25"/>
@@ -43,6 +44,9 @@
                         <constraint firstAttribute="width" constant="25" id="56R-x8-X6a"/>
                     </constraints>
                     <state key="normal" image="minus"/>
+                    <connections>
+                        <action selector="actionMinusButton:" destination="-1" eventType="touchUpInside" id="ewS-cd-4gh"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.098494045436382294" green="0.069105468690395355" blue="0.12703481316566467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
