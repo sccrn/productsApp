@@ -9,8 +9,12 @@
 import Foundation
 import UIKit
 
+protocol HomeCDelegate: class {
+    func moveToPaymentFlow(_ coordinator: HomeCoordinator, cart: CartRealm)
+}
+
 class HomeCoordinator: Coordinator {
-    
+    weak var delegate: HomeCDelegate?
     var childCoordinators: [Coordinator] = []
     var rootViewController: UIViewController { return navigationController }
     
@@ -25,6 +29,25 @@ class HomeCoordinator: Coordinator {
     func start() {
         let homeController = HomeController()
         homeController.viewModel = HomeViewModel()
+        homeController.viewModel.coordinator = self
         navigationController.pushViewController(homeController, animated: false)
+    }
+}
+
+extension HomeCoordinator: HomeCoordinatorDelegate {
+    func moveForwardFlow(_ controller: HomeController, didSelect cart: CartRealm) {
+        let viewModel = CheckoutViewModel(cart: cart)
+        viewModel.coordinator = self
+        let checkout = CheckoutController(viewModel: viewModel)
+        navigationController.pushViewController(checkout, animated: true)
+    }
+}
+
+extension HomeCoordinator: CheckoutCoordinatorDelegate {
+    func didEndPayment(_ controller: CheckoutController, didSelect action: CheckoutAction) {
+        switch action {
+        case .dismiss: navigationController.popViewController(animated: true)
+        case .checkout(let cart): delegate?.moveToPaymentFlow(self, cart: cart)
+        }
     }
 }

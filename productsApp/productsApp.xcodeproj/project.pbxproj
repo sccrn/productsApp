@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220937BC22CC73D400CEF2FE /* CheckoutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220937BB22CC73D400CEF2FE /* CheckoutController.xib */; };
+		220937BE22CC73E100CEF2FE /* CheckoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220937BD22CC73E100CEF2FE /* CheckoutController.swift */; };
+		220937C022CC73EE00CEF2FE /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220937BF22CC73EE00CEF2FE /* CheckoutViewModel.swift */; };
+		220937C322CC76EF00CEF2FE /* CheckoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220937C222CC76EF00CEF2FE /* CheckoutCell.xib */; };
+		220937C522CC76FA00CEF2FE /* CheckoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220937C422CC76FA00CEF2FE /* CheckoutCell.swift */; };
 		2278725E22CBD9070071FA51 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278725D22CBD9070071FA51 /* Array.swift */; };
 		2278726222CBDA190071FA51 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278726122CBDA190071FA51 /* RealmManager.swift */; };
 		2284441D22CB468300FD77AC /* CartRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2284441C22CB468300FD77AC /* CartRealm.swift */; };
@@ -28,6 +33,16 @@
 		22C40A0C22C8115E0090C696 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C40A0B22C8115E0090C696 /* Coordinator.swift */; };
 		22C40A1022C8118D0090C696 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C40A0F22C8118D0090C696 /* BaseController.swift */; };
 		22C40A1422C815B30090C696 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C40A1322C815B30090C696 /* AppCoordinator.swift */; };
+		22CD91BE22CDD68E00840178 /* BuyProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD91BD22CDD68E00840178 /* BuyProductCell.swift */; };
+		22CD91C022CDD69900840178 /* BuyProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CD91BF22CDD69900840178 /* BuyProductCell.xib */; };
+		22CD91C322CDDAB500840178 /* DiscountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CD91C222CDDAB500840178 /* DiscountCell.xib */; };
+		22CD91C522CDDACA00840178 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD91C422CDDACA00840178 /* DiscountCell.swift */; };
+		22CD91C722CDDC9800840178 /* Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD91C622CDDC9800840178 /* Discount.swift */; };
+		22CD91CA22CEAD5B00840178 /* CheckoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD91C922CEAD5B00840178 /* CheckoutSection.swift */; };
+		22CD91D022CEDC8200840178 /* PaymentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CD91CF22CEDC8200840178 /* PaymentController.xib */; };
+		22CD91D222CEDC8D00840178 /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD91D122CEDC8D00840178 /* PaymentController.swift */; };
+		22CD91D422CEDC9700840178 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD91D322CEDC9700840178 /* PaymentViewModel.swift */; };
+		22CD91D722CEF53700840178 /* PaymentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD91D622CEF53700840178 /* PaymentCoordinator.swift */; };
 		22D7A4E322C92C9D00572802 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7A4E222C92C9D00572802 /* Products.swift */; };
 		22D7A4E622C92D0800572802 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7A4E522C92D0800572802 /* APIManager.swift */; };
 		22D7A4E822C92D1300572802 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7A4E722C92D1300572802 /* ProductManager.swift */; };
@@ -62,6 +77,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		220937BB22CC73D400CEF2FE /* CheckoutController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutController.xib; sourceTree = "<group>"; };
+		220937BD22CC73E100CEF2FE /* CheckoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutController.swift; sourceTree = "<group>"; };
+		220937BF22CC73EE00CEF2FE /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
+		220937C222CC76EF00CEF2FE /* CheckoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutCell.xib; sourceTree = "<group>"; };
+		220937C422CC76FA00CEF2FE /* CheckoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCell.swift; sourceTree = "<group>"; };
 		2278725D22CBD9070071FA51 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		2278726122CBDA190071FA51 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		2284441C22CB468300FD77AC /* CartRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRealm.swift; sourceTree = "<group>"; };
@@ -89,6 +109,16 @@
 		22C40A0B22C8115E0090C696 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		22C40A0F22C8118D0090C696 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		22C40A1322C815B30090C696 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		22CD91BD22CDD68E00840178 /* BuyProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProductCell.swift; sourceTree = "<group>"; };
+		22CD91BF22CDD69900840178 /* BuyProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyProductCell.xib; sourceTree = "<group>"; };
+		22CD91C222CDDAB500840178 /* DiscountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscountCell.xib; sourceTree = "<group>"; };
+		22CD91C422CDDACA00840178 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
+		22CD91C622CDDC9800840178 /* Discount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discount.swift; sourceTree = "<group>"; };
+		22CD91C922CEAD5B00840178 /* CheckoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSection.swift; sourceTree = "<group>"; };
+		22CD91CF22CEDC8200840178 /* PaymentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentController.xib; sourceTree = "<group>"; };
+		22CD91D122CEDC8D00840178 /* PaymentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentController.swift; sourceTree = "<group>"; };
+		22CD91D322CEDC9700840178 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		22CD91D622CEF53700840178 /* PaymentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCoordinator.swift; sourceTree = "<group>"; };
 		22D7A4E222C92C9D00572802 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		22D7A4E522C92D0800572802 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		22D7A4E722C92D1300572802 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
@@ -139,6 +169,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220937BA22CC73BA00CEF2FE /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				22CD91C822CEAD4600840178 /* Section */,
+				220937C122CC76D700CEF2FE /* Cell */,
+				220937BB22CC73D400CEF2FE /* CheckoutController.xib */,
+				220937BD22CC73E100CEF2FE /* CheckoutController.swift */,
+				220937BF22CC73EE00CEF2FE /* CheckoutViewModel.swift */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		220937C122CC76D700CEF2FE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				22D3B47922CDD65100B20F96 /* Checkout */,
+				22CD91C122CDD97200840178 /* Discount  */,
+				22CD91BC22CDD67300840178 /* Buy Product */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		222077C522CBD8D800819526 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +255,8 @@
 		22BE439B22C82FC400648CAB /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				22D7A4F322C94F5800572802 /* Cell */,
 				22D7A4EC22C935A300572802 /* Section */,
+				22D7A4F322C94F5800572802 /* Cell */,
 				22BE439C22C82FDE00648CAB /* HomeController.xib */,
 				22BE439E22C82FF300648CAB /* HomeController.swift */,
 				22BE43A022C8300200648CAB /* HomeViewModel.swift */,
@@ -343,6 +395,7 @@
 				22C40A0B22C8115E0090C696 /* Coordinator.swift */,
 				22C40A1222C815A10090C696 /* App */,
 				22BE43A222C830E700648CAB /* Home */,
+				22CD91D522CEF52800840178 /* Payment */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -352,6 +405,8 @@
 			children = (
 				22C40A0E22C8117B0090C696 /* App */,
 				22BE439B22C82FC400648CAB /* Home */,
+				220937BA22CC73BA00CEF2FE /* Checkout */,
+				22CD91CE22CEDC7000840178 /* Payment */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -370,6 +425,60 @@
 				22C40A1322C815B30090C696 /* AppCoordinator.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		22CD91BC22CDD67300840178 /* Buy Product */ = {
+			isa = PBXGroup;
+			children = (
+				22CD91BF22CDD69900840178 /* BuyProductCell.xib */,
+				22CD91BD22CDD68E00840178 /* BuyProductCell.swift */,
+			);
+			path = "Buy Product";
+			sourceTree = "<group>";
+		};
+		22CD91C122CDD97200840178 /* Discount  */ = {
+			isa = PBXGroup;
+			children = (
+				22CD91C222CDDAB500840178 /* DiscountCell.xib */,
+				22CD91C422CDDACA00840178 /* DiscountCell.swift */,
+				22CD91C622CDDC9800840178 /* Discount.swift */,
+			);
+			path = "Discount ";
+			sourceTree = "<group>";
+		};
+		22CD91C822CEAD4600840178 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				22CD91C922CEAD5B00840178 /* CheckoutSection.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		22CD91CE22CEDC7000840178 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				22CD91CF22CEDC8200840178 /* PaymentController.xib */,
+				22CD91D122CEDC8D00840178 /* PaymentController.swift */,
+				22CD91D322CEDC9700840178 /* PaymentViewModel.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		22CD91D522CEF52800840178 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				22CD91D622CEF53700840178 /* PaymentCoordinator.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		22D3B47922CDD65100B20F96 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				220937C222CC76EF00CEF2FE /* CheckoutCell.xib */,
+				220937C422CC76FA00CEF2FE /* CheckoutCell.swift */,
+			);
+			path = Checkout;
 			sourceTree = "<group>";
 		};
 		22D7A4E022C92C7B00572802 /* Service */ = {
@@ -574,10 +683,15 @@
 			files = (
 				22C409E322C7EA490090C696 /* LaunchScreen.storyboard in Resources */,
 				2284442322CB50DF00FD77AC /* CartCell.xib in Resources */,
+				22CD91C322CDDAB500840178 /* DiscountCell.xib in Resources */,
+				22CD91C022CDD69900840178 /* BuyProductCell.xib in Resources */,
 				22BE439D22C82FDE00648CAB /* HomeController.xib in Resources */,
 				2284442722CB50F700FD77AC /* ProductCell.xib in Resources */,
 				22C409E022C7EA490090C696 /* Assets.xcassets in Resources */,
+				22CD91D022CEDC8200840178 /* PaymentController.xib in Resources */,
+				220937BC22CC73D400CEF2FE /* CheckoutController.xib in Resources */,
 				22EAAF7822CBF5BC00143D8A /* PAddProductsView.xib in Resources */,
+				220937C322CC76EF00CEF2FE /* CheckoutCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +751,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -650,6 +765,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -707,13 +823,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22CD91BE22CDD68E00840178 /* BuyProductCell.swift in Sources */,
+				220937BE22CC73E100CEF2FE /* CheckoutController.swift in Sources */,
 				22C40A1422C815B30090C696 /* AppCoordinator.swift in Sources */,
 				2278725E22CBD9070071FA51 /* Array.swift in Sources */,
 				22EAAF7222CBF2FB00143D8A /* UIView.swift in Sources */,
 				2284442522CB50E900FD77AC /* CartCell.swift in Sources */,
 				22D7A4E822C92D1300572802 /* ProductManager.swift in Sources */,
+				22CD91D722CEF53700840178 /* PaymentCoordinator.swift in Sources */,
 				22D7A4F222C94EF000572802 /* UITableView.swift in Sources */,
+				22CD91C722CDDC9800840178 /* Discount.swift in Sources */,
+				220937C522CC76FA00CEF2FE /* CheckoutCell.swift in Sources */,
 				2278726222CBDA190071FA51 /* RealmManager.swift in Sources */,
+				22CD91D422CEDC9700840178 /* PaymentViewModel.swift in Sources */,
+				220937C022CC73EE00CEF2FE /* CheckoutViewModel.swift in Sources */,
 				22BE43A122C8300200648CAB /* HomeViewModel.swift in Sources */,
 				22D7A4E622C92D0800572802 /* APIManager.swift in Sources */,
 				22EAAF7522CBF54C00143D8A /* NibLoadable.swift in Sources */,
@@ -730,7 +853,10 @@
 				22BE43A422C830F400648CAB /* HomeCoordinator.swift in Sources */,
 				2284442922CB50FF00FD77AC /* ProductCell.swift in Sources */,
 				22BE439F22C82FF300648CAB /* HomeController.swift in Sources */,
+				22CD91D222CEDC8D00840178 /* PaymentController.swift in Sources */,
+				22CD91CA22CEAD5B00840178 /* CheckoutSection.swift in Sources */,
 				22D7A4EB22C92DEA00572802 /* Constants.swift in Sources */,
+				22CD91C522CDDACA00840178 /* DiscountCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

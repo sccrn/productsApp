@@ -30,9 +30,9 @@ class PAddProductsView: UIView, NibLoadable {
         setupFromNib()
     }
     
-    func configure(product: ProductRealm) {
+    func configure(product: ProductRealm, quantity: Int) {
         self.product = product
-        productsQuantity.text = "\(product.quantity)"
+        productsQuantity.text = "\(quantity)"
     }
     
     

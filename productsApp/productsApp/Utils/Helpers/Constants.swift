@@ -18,8 +18,13 @@ struct Constants {
         static let json = "application/json"
     }
     
+    struct Realm {
+        static let primaryKey = "currentCart"
+    }
+    
     struct Screen {
         static let home = "Products"
+        static let checkout = "Check out"
     }
     
     struct Label {
@@ -27,5 +32,18 @@ struct Constants {
         static let totalPrice = "Total: "
         static let price = "€"
         static let sectionTitle = "Hello! Choose your products! :)"
+    }
+    
+    struct Discount {
+        static let voucher = "VOUCHER"
+        static let tshirt = "TSHIRT"
+        
+        static let voucherDescription = "Buy two, get one free"
+    }
+    
+    struct Error {
+        static let ok = "Ok!"
+        static let ops = "Ops!"
+        static let zeroProducts = "Sorry, you must add at least one product to your cart!"
     }
 }

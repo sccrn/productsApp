@@ -24,9 +24,9 @@ class HomeController: BaseController {
                 cell.configure(cart: cart)
                 cell.delegate = self
                 return cell
-            case .product(let product):
+            case .product(let product, let cart):
                 let cell = tableView.dequeue(cellClass: ProductCell.self, indexPath: indexPath)
-                cell.configure(product: product)
+                cell.configure(product: product, cart: cart)
                 cell.addProductView.delegate = self
                 return cell
             }
@@ -40,10 +40,10 @@ class HomeController: BaseController {
         loadLayout()
         loadNavBar()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel.loadProducts()
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
     }
     
     private func loadNavBar() {
@@ -51,19 +51,34 @@ class HomeController: BaseController {
     }
     
     private func loadLayout() {
+        viewModel.onShowLoadingHud.map { [weak self] in
+            $0 == true ? self?.showLoading() : self?.stopLoading()
+        }.subscribe().disposed(by: disposeBag)
+        
+        viewModel.onShowError.map { [weak self] in
+            self?.showError(message: $0)
+        }.subscribe().disposed(by: disposeBag)
+        
+        loadTableView()
+    }
+    
+    private func loadTableView() {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.registerNib(cellClass: CartCell.self)
         tableView.registerNib(cellClass: ProductCell.self)
         
         viewModel.productsObservable.flatMap { (products) -> Observable<[ProductSection]> in  return .just(self.viewModel.updateTableView(by: products))
         }.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
-        
     }
 }
 
 extension HomeController: CartCellDelegate {
     func didSelectCheckout(for cart: CartRealm) {
-        viewModel.coordinator?.moveForwardFlow(self, didSelect: cart)
+        if cart.products.count == 0 {
+            showError(message: Constants.Error.zeroProducts)
+        } else {
+            viewModel.coordinator?.moveForwardFlow(self, didSelect: cart)
+        }
     }
 }
 

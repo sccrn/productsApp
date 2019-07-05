@@ -15,61 +15,55 @@ class RealmManager {
     let realm = try? Realm()
     
     func saveObjects(objts: [Object]) {
-        try? realm!.write ({
+        try? realm?.write ({
             realm?.add(objts, update: false)
         })
     }
     
     func saveObject(objt: Object) {
-        try? realm!.write ({
+        try? realm?.write ({
             realm?.add(objt, update: false)
         })
     }
     
     func editCart(objt: CartRealm, product: ProductRealm, isAddProduct: Bool) {
-        try? realm!.write ({
-            if objt.products.count > 0 {
-                if let index = objt.products.index(of: product) {
-                    objt.products.remove(at: index)
-                }
+        try? realm?.write ({
+            if objt.products.contains(product) {
+                
+            } else {
+                
             }
-            if isAddProduct {
-                product.quantity += 1
-            } else if product.quantity > 0 && !isAddProduct {
-                product.quantity -= 1
-            }
-            if product.quantity > 0 { objt.products.append(product) }
-            var quantity: Int = 0
-            objt.productsQuantity = 0
-            objt.products.forEach { prod in
-                quantity += prod.quantity
-            }
-            objt.productsQuantity = quantity
-            realm?.add(product, update: true)
             realm?.add(objt, update: true)
+            realm?.add(product, update: true)
+        })
+    }
+    
+    func editCartTotalPrice(cart: CartRealm, total: Double) {
+        try? realm?.write ({
+            cart.price = total
+            realm?.add(cart, update: false)
         })
     }
     
     func deleteProducts() {
         let products = getProducts()
-        try? realm!.write ({
+        try? realm?.write ({
             realm?.delete(products)
         })
     }
     
     func deleteCart(by cart: CartRealm) {
-        try? realm!.write ({
+        try? realm?.write ({
             realm?.delete(cart)
         })
     }
     
     func getCartObject() -> CartRealm? {
-        let obj = realm!.objects(CartRealm.self)
-        return obj.first
+        return realm?.object(ofType: CartRealm.self, forPrimaryKey: Constants.Realm.primaryKey)
     }
 
     func getProducts() -> [ProductRealm] {
-        let result = realm!.objects(ProductRealm.self)
-        return result.compactMap { $0 }
+        let result = realm?.objects(ProductRealm.self)
+        return result?.compactMap { $0 } ?? []
     }
 }

@@ -14,7 +14,7 @@ import Realm
 class CartRealm: Object {
     @objc dynamic var productsQuantity: Int = 0
     @objc dynamic var price: Double = 0.0
-    @objc dynamic var id: Int = 0
+    @objc dynamic var id: String = ""
     let products = List<ProductRealm>()
     
     override static func primaryKey() -> String {

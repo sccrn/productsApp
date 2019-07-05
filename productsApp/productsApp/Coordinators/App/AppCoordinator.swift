@@ -16,6 +16,7 @@ class AppCoordinator: Coordinator {
 
     private lazy var navigationController: UINavigationController = {
         let navigationController = UINavigationController()
+        navigationController.navigationBar.barTintColor = .black
         return navigationController
     }()
     
@@ -28,11 +29,36 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
+        startHomeFlow()
+    }
+    
+    private func startHomeFlow() {
         let homeCoordinator = HomeCoordinator()
         homeCoordinator.start()
+        homeCoordinator.delegate = self
         addChildCoordinator(homeCoordinator)
         rootViewController.present(homeCoordinator.rootViewController, animated: false, completion: nil)
     }
-    
-    
+}
+
+extension AppCoordinator: HomeCDelegate {
+    func moveToPaymentFlow(_ coordinator: HomeCoordinator, cart: CartRealm) {
+        coordinator.rootViewController.dismiss(animated: false)
+        self.removeChildCoordinator(coordinator)
+        
+        let paymentCoordinator = PaymentCoordinator()
+        paymentCoordinator.start(cart: cart)
+        paymentCoordinator.delegate = self
+        addChildCoordinator(paymentCoordinator)
+        rootViewController.present(paymentCoordinator.rootViewController, animated: false, completion: nil)
+    }
+}
+
+extension AppCoordinator: PaymentCDelegate {
+    func moveToHomeFlow(_ coordinator: PaymentCoordinator) {
+        coordinator.rootViewController.dismiss(animated: false)
+        self.removeChildCoordinator(coordinator)
+        
+        startHomeFlow()
+    }
 }

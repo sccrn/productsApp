@@ -12,11 +12,12 @@ import UIKit
 protocol Coordinator: class {
     var childCoordinators: [Coordinator] { get set }
     var rootViewController: UIViewController { get }
-    
-    func start()
 }
 
 extension Coordinator {
+    ///Function to start the coordinator
+    func start() { }
+    
     /// Function to add a child coordinator to the parent coordinator.
     func addChildCoordinator(_ childCoordinator: Coordinator) {
         self.childCoordinators.append(childCoordinator)

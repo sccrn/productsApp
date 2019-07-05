@@ -14,4 +14,7 @@ extension UIColor {
     
     ///#FBFBFB
     static let navTintColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
+    
+    ///#962EE6
+    static let clearPurple = UIColor(red: 150/255, green: 46/255, blue: 230/255, alpha: 1)
 }

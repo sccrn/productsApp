@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
 
 class BaseController: UIViewController {
     
@@ -17,5 +18,17 @@ class BaseController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func showLoading() {
+        SVProgressHUD.show()
+    }
+    
+    func stopLoading() {
+        SVProgressHUD.dismiss()
+    }
+    
+    func showError(message: String) {
+        SVProgressHUD.showError(withStatus: message)
     }
 }
