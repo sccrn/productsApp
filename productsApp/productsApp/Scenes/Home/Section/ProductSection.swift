@@ -12,7 +12,7 @@ import RxDataSources
 
 enum ProductItem {
     case cart(cart: CartRealm)
-    case product(products: ProductRealm, cart: CartRealm)
+    case product(product: Product, cart: CartRealm)
 }
 
 enum ProductSection {

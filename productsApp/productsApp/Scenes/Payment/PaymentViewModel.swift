@@ -26,5 +26,6 @@ class PaymentViewModel {
     
     func sendOrderCart() {
         realmManager.deleteCart(by: cart)
+        realmManager.deleteProducts()
     }
 }

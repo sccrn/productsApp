@@ -83,7 +83,7 @@ extension HomeController: CartCellDelegate {
 }
 
 extension HomeController: PAddProductsDelegate {
-    func didChangeQuantity(for product: ProductRealm, isAddProduct: Bool) {
+    func didChangeQuantity(for product: Product, isAddProduct: Bool) {
         viewModel.saveProduct(product: product, isAddProduct: isAddProduct)
     }
 }

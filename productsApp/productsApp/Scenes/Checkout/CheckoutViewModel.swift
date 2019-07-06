@@ -42,20 +42,22 @@ class CheckoutViewModel {
     func viewDidAppear() {
         var total: Double = 0.0
         cart.products.forEach { product in
-            if product.code == Constants.Discount.voucher {
-                let discount: Discount = .voucher(product: product)
+            if let discount = setupDiscounts(product: product) {
                 total += discount.discountPrice
-                discounts.append(discount)
-            } else if product.code == Constants.Discount.tshirt {
-                let discount: Discount = .tshirt(product: product, newPrice: 19.00)
-                total += discount.discountPrice
-                discounts.append(discount)
-            } else {
-                total += Double(product.quantity) * product.price
+                if discount.codeName != Constants.Discount.mug { discounts.append(discount) }
             }
         }
         realmManager.editCartTotalPrice(cart: cart, total: total)
         products.accept(Array(cart.products))
+    }
+    
+    private func setupDiscounts(product: ProductRealm) -> Discount? {
+        switch product.code {
+        case Constants.Discount.mug: return .mug(product: product)
+        case Constants.Discount.tshirt: return .tshirt(product: product, newPrice: 19.0)
+        case Constants.Discount.voucher: return .voucher(product: product)
+        default: return nil
+        }
     }
 }
 
@@ -85,7 +87,8 @@ extension CheckoutViewModel {
         var array: [CheckoutItem] = []
         if cart.products.count > 0 {
             for (index, product) in cart.products.enumerated() {
-                array.append(.productDetails(product: product, isLastItem: index == cart.products.count - 1))
+                array.append(.productDetails(product: product,
+                                             isLastItem: index == cart.products.count - 1))
             }
         }
         return array

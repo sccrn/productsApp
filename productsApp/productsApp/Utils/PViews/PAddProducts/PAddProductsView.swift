@@ -12,13 +12,13 @@ import RxCocoa
 import UIKit
 
 protocol PAddProductsDelegate: class {
-    func didChangeQuantity(for product: ProductRealm, isAddProduct: Bool)
+    func didChangeQuantity(for product: Product, isAddProduct: Bool)
 }
 
 class PAddProductsView: UIView, NibLoadable {
     weak var delegate: PAddProductsDelegate?
     @IBOutlet weak var productsQuantity: UILabel!
-    private var product: ProductRealm?
+    private var product: Product?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,7 +30,7 @@ class PAddProductsView: UIView, NibLoadable {
         setupFromNib()
     }
     
-    func configure(product: ProductRealm, quantity: Int) {
+    func configure(product: Product, quantity: Int) {
         self.product = product
         productsQuantity.text = "\(quantity)"
     }

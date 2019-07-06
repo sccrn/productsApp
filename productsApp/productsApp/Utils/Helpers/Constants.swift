@@ -37,6 +37,7 @@ struct Constants {
     struct Discount {
         static let voucher = "VOUCHER"
         static let tshirt = "TSHIRT"
+        static let mug = "MUG"
         
         static let voucherDescription = "Buy two, get one free"
     }
