@@ -8,6 +8,7 @@
 
 import Foundation
 
+///Object that came from the API
 struct Products: Codable {
     let products: [Product]
 }

@@ -27,9 +27,9 @@ class HomeCoordinator: Coordinator {
     }()
     
     func start() {
-        let homeController = HomeController()
-        homeController.viewModel = HomeViewModel()
-        homeController.viewModel.coordinator = self
+        let viewModel = HomeViewModel()
+        let homeController = HomeController(viewModel: viewModel)
+        viewModel.coordinator = self
         navigationController.pushViewController(homeController, animated: false)
     }
 }

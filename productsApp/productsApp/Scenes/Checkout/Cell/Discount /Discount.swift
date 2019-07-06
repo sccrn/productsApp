@@ -23,7 +23,7 @@ enum Discount {
 
     var description: String {
         switch self {
-        case .voucher: return Constants.Discount.voucherDescription
+        case .voucher(let product): return "Buy two \(product.name), get one free"
         case .tshirt(let product, let newPrice):
             return "Buy 3 or more \(product.name), pay \(newPrice)€ per unit"
         case .mug: return ""

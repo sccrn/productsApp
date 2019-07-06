@@ -33,7 +33,16 @@ class HomeController: BaseController {
        })
     }()
     private var disposeBag = DisposeBag()
-    var viewModel: HomeViewModel = HomeViewModel()
+    private var viewModel: HomeViewModel
+    
+    init(viewModel: HomeViewModel ) {
+        self.viewModel = viewModel
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +76,7 @@ class HomeController: BaseController {
         tableView.registerNib(cellClass: CartCell.self)
         tableView.registerNib(cellClass: ProductCell.self)
         
-        viewModel.productsObservable.flatMap { (products) -> Observable<[ProductSection]> in  return .just(self.viewModel.updateTableView(by: products))
+        viewModel.cartObservable.flatMap { _ -> Observable<[ProductSection]> in  return .just(self.viewModel.updateTableView())
         }.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
     }
 }

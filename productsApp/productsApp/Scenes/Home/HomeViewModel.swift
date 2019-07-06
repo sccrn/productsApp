@@ -30,9 +30,7 @@ class HomeViewModel {
     let onShowError = PublishSubject<String>()
     var cart = BehaviorRelay<CartRealm?>(value: nil)
     var products = BehaviorRelay<[Product]>(value: [])
-    var productsObservable: Observable<[Product]> {
-        return products.asObservable()
-    }
+    
     var cartObservable: Observable<CartRealm?> {
         return cart.asObservable()
     }
@@ -42,25 +40,25 @@ class HomeViewModel {
     
     func viewDidAppear() {
         loadCart()
-        loadProducts()
     }
     
     private func loadCart() {
         if let model = realmManager.getCartObject() {
-            self.cart.accept(model)
+            loadProducts(model: model)
         } else {
             let newCart = CartRealm()
             newCart.id = Constants.Realm.primaryKey
             realmManager.saveObject(objt: newCart)
-            self.cart.accept(newCart)
+            loadProducts(model: newCart)
         }
     }
     
-    private func loadProducts() {
+    private func loadProducts(model: CartRealm) {
         loadInProgress.accept(true)
         productsManager.fetchProducts().subscribe(onSuccess: { [weak self] (products) in
                 self?.loadInProgress.accept(false)
                 self?.products.accept(products.products)
+                self?.cart.accept(model)
             }, onError: { [weak self] error in
                 self?.loadInProgress.accept(false)
                 self?.onShowError.onNext(error.localizedDescription)
@@ -69,22 +67,22 @@ class HomeViewModel {
 }
 
 extension HomeViewModel {
-    func updateTableView(by products: [Product]) -> [ProductSection] {
+    func updateTableView() -> [ProductSection] {
         var array: [ProductSection] = []
         if let cartSection = cartSection() { array.append(cartSection) }
-        if let productSection = productSection(by: products) { array.append(productSection) }
+        if let productSection = productSection() { array.append(productSection) }
         return array
     }
     
-    func cartSection() -> ProductSection? {
+    private func cartSection() -> ProductSection? {
         guard let model = cart.value else { return nil}
         return ProductSection.cartSection(content: [.cart(cart: model)])
     }
     
-    func productSection(by products: [Product]) -> ProductSection? {
+    private func productSection() -> ProductSection? {
         guard let model = cart.value else { return nil }
         var array: [ProductItem] = []
-        products.forEach { product in
+        products.value.forEach { product in
             array.append(.product(product: product, cart: model))
         }
         return ProductSection.productSection(content: array)
@@ -95,6 +93,5 @@ extension HomeViewModel {
         realmManager.editCart(objt: model, product: product, isAddProduct: isAddProduct)
         guard let cart = realmManager.getCartObject() else { return }
         self.cart.accept(cart)
-        self.products.accept(self.products.value)
     }
 }
